@@ -1,0 +1,96 @@
+<template name="edit">
+<div class="containerOne" style="margin:10px;padding: 50px;">
+		<form class="form-horizontal">
+
+			{{#with imgResults}}
+
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+					<img src="{{url}}">
+					<input type="hidden" class="efileID" value="{{_id}}">
+				</div>
+			</div>
+			
+			{{/with}}
+
+			<div class="form-group">
+				<div class="col-sm-6">
+					<input type="file" class="fileUpload">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Municipality Name</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_name" value="{{ mMunicipality}}" placeholder="Municipality Name" disabled>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">District</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_district" value="{{ mDistrict}}" placeholder="District" disabled>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Barangay</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_barangay" value="{{mBarangay}}" placeholder="Barangay" disabled>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Mayor</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_mayor" value="{{mMayor}}" placeholder="Mayor">
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Vice-Mayor</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_vmayor" value="{{mVMayor}}" placeholder="Vice-Mayor">
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Total Population</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_pop_total" value="{{mPop_total}}" placeholder="Total Population">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Population Density</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_pop_density" value="{{mPop_dens}}" placeholder="Population Density" disabled>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Zip Code</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_zip_code" value="{{mZipcode}}" placeholder="Zip Code" disabled>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Income Class</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control eM_income_class" value="{{mIncomeClass}}" placeholder="Income Class" disabled>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-6">
+					<button type="button" class="btn btn-primary mEdit">Update</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+
+</template>
