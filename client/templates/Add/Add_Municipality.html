@@ -1,0 +1,150 @@
+<template name="AddMunicipality">
+	<h3>Municipality</h3>
+	<div class="containerOne" style="margin:10px;padding: 50px;">
+		<form class="form-horizontal addMunicipality">
+
+			{{#with imgResults}}
+
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+					<img src="{{url}}">
+					<input type="hidden" class="mfileID" value="{{_id}}">
+				</div>
+				...
+			</div>
+			
+			{{/with}}
+
+			<div class="form-group">
+				<div class="col-sm-6">
+					<input type="file" class="fileUpload">
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Municipality Name</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_name" placeholder="Municipality Name">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">District</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_district" placeholder="District">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Barangay</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_barangay" placeholder="Barangay">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Mayor</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_mayor" placeholder="Mayor">
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Vice-Mayor</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_vmayor" placeholder="Vice-Mayor">
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Total Population</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_pop_total" placeholder="Total Population">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Population Density</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_pop_density" placeholder="Population Density">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Zip Code</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_zip_code" placeholder="Zip Code">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Income Class</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control M_income_class" placeholder="Income Class">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-6">
+					<button class="btn btn-primary " id="addMunicipality">Submit</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	</template>
+
+<template name="resultsMunicipality">
+	<div class="resutlsMunicipality">
+		  <h2 class="sub-header">Municipality</h2>
+		  <!-- <a href="{{pathFor 'AddMunicipality'}}"><button class="btn btn-primary">Add</button></a> -->
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+					<tr>
+						<th>Photo</th>
+						<th>Name</th>
+						<th>District</th>
+						<th>Barangay</th>
+						<th>Mayor</th>
+						<th>Vice-Mayor</th>
+						<th>Total Population</th>
+						<th>Population Density</th>
+						<th>Zip Code</th>
+						<th>Income Class</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each results}}
+					<tr>
+							<td>
+							{{#with img}}
+									<img src="{{url}}">		
+							{{/with}}
+							</td>
+						<!-- 	<td>{{_id}}</td> -->
+							<td>{{mMunicipality}}</td>
+							<td>{{mDistrict}}</td>
+							<td>{{mBarangay}}</td>
+
+							<td>{{mMayor}}</td>
+							<td>{{mVMayor}}</td>
+							<td>{{mPop_total}}</td>
+
+							<td>{{mPop_dens}}</td>
+							<td>{{mZipcode}}</td>
+							<td>{{mIncomeClass}}</td>
+							<td><a href="{{pathFor 'edit'}}"><button class="btn btn-info" id="mbtnUpdate">Update</button></a></td>
+							<!-- <td><button class="btn btn-danger mbtnDelete ">&times;</button></td> -->
+
+						</tr>
+
+						{{/each}}
+					</tbody>
+            </table>
+          </div>
+		</div>
+	</template>
